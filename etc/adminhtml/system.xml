@@ -129,6 +129,8 @@
                     </depends>
                 </field>
             </group>
+
+            <include path="IMI_FriendlyCaptcha::system/graphql.xml"/>
         </section>
     </system>
 </config>

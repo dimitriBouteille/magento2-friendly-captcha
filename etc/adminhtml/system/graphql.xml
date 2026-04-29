@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+  -  Copyright © iMi digital GmbH, based on work by MageSpecialist
+  -  See LICENSE for license details.
+  -->
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="graphql" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+           showInStore="1">
+        <label>GraphQl</label>
+        <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+               showInStore="0">
+            <label>Enable</label>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <config_path>imi_friendly_captcha/graphql/enabled</config_path>
+        </field>
+        <field id="mutations" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInStore="1" showInWebsite="1">
+            <label>Mutations to secure</label>
+            <source_model>IMI\FriendlyCaptcha\Model\Config\Source\Graphql\Mutations</source_model>
+            <config_path>imi_friendly_captcha/graphql/mutations</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="queries" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInStore="1" showInWebsite="1">
+            <label>Queries to secure</label>
+            <source_model>IMI\FriendlyCaptcha\Model\Config\Source\Graphql\Queries</source_model>
+            <config_path>imi_friendly_captcha/graphql/queries</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+    </group>
+</include>
